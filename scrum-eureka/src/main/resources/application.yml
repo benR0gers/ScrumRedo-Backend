@@ -1,0 +1,13 @@
+server:
+  port: 8761
+eureka:
+  dashboard:
+    enabled: true
+  instance:
+    hostname: localhost
+
+
+
+
+
+

@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: scrum-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/benR0gers/ScrumRedo-Config.git
