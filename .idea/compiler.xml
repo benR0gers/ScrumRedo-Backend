@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="scrum-config" />
+        <module name="scrum-eureka" />
+        <module name="scrum-user" />
+        <module name="scrum-zuul" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="scrum-config" target="1.8" />
+      <module name="scrum-eureka" target="1.8" />
+      <module name="scrum-user" target="1.8" />
+      <module name="scrum-zuul" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

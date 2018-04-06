@@ -1,2 +1,6 @@
 server:
   port: 8765
+zuul:
+  routes:
+    scrum-user: /scrum-user/**
+
