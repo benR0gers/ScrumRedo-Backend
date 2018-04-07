@@ -35,4 +35,12 @@ public class ScrumUserService {
         scrumUserRepository.delete(su);
     }
 
+    public boolean authenticate(String username, String password){
+        ScrumUser user = scrumUserRepository.findByUsername(username);
+        if(user != null && user.getPassword().equals(password)){
+            return true;
+        }
+        return false;
+    }
+
 }

@@ -1,6 +1,10 @@
 server:
   port: 8765
-zuul:
-  routes:
-    scrum-user: /scrum-user/**
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      default-zone: http://localhost:8761/eureka
+
 

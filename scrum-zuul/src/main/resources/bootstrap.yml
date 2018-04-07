@@ -4,3 +4,8 @@ spring:
   cloud:
     config:
       uri: http://localhost:9000
+zuul:
+  routes:
+    scrum-user:
+      path: /scrum-user/**
+      url: http://localhost:8081

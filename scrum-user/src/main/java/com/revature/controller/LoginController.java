@@ -8,7 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+
 
 @RestController
 public class LoginController {
@@ -17,7 +20,7 @@ public class LoginController {
     private ScrumUserService scrumUserService;
 
     @GetMapping("/")
-    public String login(){
+    public String mainPage(){
         return "hello world";
     }
 
@@ -68,5 +71,25 @@ public class LoginController {
         ScrumUser su = scrumUserService.findById(id);
         scrumUserService.delete(su);
         return new ModelAndView("redirect:/users");
+    }
+
+    @PostMapping("/login")
+    public ModelAndView login(String username, String password){
+        boolean loggedIn = scrumUserService.authenticate(username, password);
+        if(loggedIn){
+            return new ModelAndView("redirect:/");
+        } else {
+            return new ModelAndView("redirect:/login");
+        }
+    }
+
+    @GetMapping
+    public ModelAndView logout(HttpServletRequest request){
+        try {
+            request.logout();
+        } catch (ServletException e) {
+            e.printStackTrace();
+        }
+        return new ModelAndView("redirect:/");
     }
 }

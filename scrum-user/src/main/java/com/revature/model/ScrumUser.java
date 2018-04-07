@@ -1,12 +1,12 @@
 package com.revature.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity(name = "SCRUM_USER")
 public class ScrumUser {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -86,4 +86,5 @@ public class ScrumUser {
     public void setBoardUserJoins(Set<BoardUserJoin> boardUserJoins) {
         this.boardUserJoins = boardUserJoins;
     }
+
 }

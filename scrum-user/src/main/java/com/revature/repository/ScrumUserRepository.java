@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ScrumUserRepository extends CrudRepository<ScrumUser, Integer>{
     ScrumUser findById(int id);
+    ScrumUser findByUsername(String username);
 }
