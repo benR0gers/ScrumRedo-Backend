@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: scrum-board
+  cloud:
+    config:
+      uri: http://localhost:9000
+  datasource:
+      url: jdbc:h2:mem:scrum-board
+      platform: h2
+      username: sa
+      password:
+      driverClassName: org.h2.Driver
+    jpa:
+      database-platform: org.hibernate.dialect.H2Dialect
+      hibernate:
+        ddl-auto: update
+      properties:
+        hibernate:
+          show_sql: true
+          use_sql_comments: true
+          format_sql: true
+  devtools:
+    livereload: true
+    restart: true
+  h2:
+    console:
+      enabled: true
+      path: /console
+      settings:
+        trace: false
+        web-allow-others: false
+
